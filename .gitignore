@@ -50,3 +50,7 @@ data/
 runs/
 calibration_runs/
 private/
+
+# Public, synthetic inputs required by the post-processing demo and CI
+!skills/pfc-postprocessing/examples/minimal_case/data/
+!skills/pfc-postprocessing/examples/minimal_case/data/*.csv
