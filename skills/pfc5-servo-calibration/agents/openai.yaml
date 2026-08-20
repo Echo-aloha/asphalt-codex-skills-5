@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Servo Calibration"
+  short_description: "Control loads and calibrate PFC5 asphalt parameters"
+  default_prompt: "Use $pfc5-servo-calibration to design a stable PFC 5.0 servo or guarded calibration campaign."

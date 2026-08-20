@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 AE And Energy"
+  short_description: "Cluster PFC5 damage hits and compute energy curves"
+  default_prompt: "Use $pfc5-ae-energy to design or post-process a PFC 5.0 asphalt AE and energy workflow."

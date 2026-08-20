@@ -1,0 +1,4 @@
+interface:
+  display_name: "Burger Viscoelastic Contact Model"
+  short_description: "Probe and calibrate PFC5 Burger asphalt contacts"
+  default_prompt: "Use $pfc-burger-viscoelastic to verify PFC 5.0 Burger syntax with a contact probe and calibrate contact parameters from unit-consistent macro response without generic defaults."

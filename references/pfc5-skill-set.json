@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "required_skills": [
+    "pfc-asphalt-mixture",
+    "pfc-burger-viscoelastic",
+    "pfc-fishtank-tests",
+    "pfc-marshall-test",
+    "pfc-postprocessing",
+    "pfc-rutting-test",
+    "pfc-skill-pack",
+    "pfc-vedo-postprocess",
+    "pfc5-ae-energy",
+    "pfc5-asphalt-workflow",
+    "pfc5-core-modeling",
+    "pfc5-coupling",
+    "pfc5-dynamics-wave",
+    "pfc5-fish",
+    "pfc5-geometry-import",
+    "pfc5-servo-calibration",
+    "pfc5-standard-tests",
+    "xxd-data-viz"
+  ]
+}

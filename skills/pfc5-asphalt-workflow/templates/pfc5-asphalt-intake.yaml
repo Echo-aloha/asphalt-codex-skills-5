@@ -1,0 +1,153 @@
+case:
+  id: null
+  objective: null
+  runtime_validated: false
+
+pfc:
+  product: PFC3D
+  version: "5.0"
+  syntax_family: pfc5
+  units: null
+  stress_sign: null
+  random_seed: null
+
+fistpkg:
+  root: "<FISTPKG_ROOT>"
+  release: 26
+  dependency_check: pending
+  copied_project: null
+  modified_functions: []
+
+standard:
+  legacy_reproduction: false
+  applicability_decision: null
+  conflicts_or_deviations: []
+  method_chain:
+    # Repeat a role when more than one method or project record contributes.
+    # Use not_applicable explicitly; do not collapse different sources into one record.
+    - role: aggregate_characterization
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: sampling
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: preparation
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: forming
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: bulk_density
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: maximum_relative_density
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: performance
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: field_validation
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+    - role: acceptance_context
+      designation: null
+      method_id: null
+      clause_or_printed_page: null
+      source_id: null
+      source_sha256: null
+      reviewer: null
+      reviewed_on: null
+      values_used: []
+      model_mapping: null
+
+specimen:
+  dimension: 3d
+  geometry: null
+  gradation_source: null
+  binder_convention: null
+  binder_content: null
+  constituent_densities: {}
+  density_test_methods: {}
+  target_air_voids: null
+  air_void_source: null
+  aggregate_shape: null
+  minimum_particle_size: null
+
+contacts:
+  assignment_table: []
+  burger_temperature: null
+  calibration_data: null
+
+test:
+  type: null
+  temperature: null
+  loading_or_motion: null
+  count_or_time_convention: null
+  measurement_protocol: null
+  raw_metric_definition: null
+  correction_procedure: null
+  stop_condition: null
+  acceptance_tolerances: {}
+
+outputs:
+  milestone_saves: []
+  histories: []
+  raw_exports: []
+  figures: []
+  unresolved_runtime_gates: []

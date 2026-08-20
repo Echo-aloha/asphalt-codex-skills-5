@@ -1,0 +1,4 @@
+interface:
+  display_name: "Asphalt Mixture Modeling"
+  short_description: "Build PFC5 asphalt specimens with gradation and closure"
+  default_prompt: "Use $pfc-asphalt-mixture to build a PFC 5.0 asphalt specimen with explicit phase-to-object assumptions, measured gradation, staged compaction, contact assignment, and mass-volume-air-void closure."

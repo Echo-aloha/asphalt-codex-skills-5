@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Asphalt Workflow"
+  short_description: "Build and test PFC 5.0 asphalt-mixture DEM cases"
+  default_prompt: "Use $pfc5-asphalt-workflow to build or audit a version-pure PFC 5.0 asphalt-mixture case, validate external fistPkg26, route the selected test, and report every unpassed runtime gate."

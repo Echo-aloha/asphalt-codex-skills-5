@@ -1,0 +1,38 @@
+; Independently authored PFC3D 5.0 curved-head contact pilot.
+; It is not a normative Marshall specimen or stability/flow calculation.
+; runtime_validated: true (manual smoke record; see docs/pfc5-runtime-verification.md)
+new
+title 'PFC5 Marshall curved-head contact pilot'
+domain extent -0.06 0.06 -0.06 0.06 -0.04 0.04 condition destroy
+cmat default model linear property kn 5.0e7 ks 2.0e7 fric 0.30 dp_nratio 0.2
+
+ball create id 1 radius 0.015 position (0.0,0.0,0.0)
+ball attribute density 2500.0
+ball fix x y z spin
+
+wall generate id 1 cylinder base (0.0,-0.025,-0.02) axis (0,0,1) height 0.04 radius 0.010 cap false false onewall
+wall generate id 2 cylinder base (0.0, 0.025,-0.02) axis (0,0,1) height 0.04 radius 0.010 cap false false onewall
+clean
+
+[head_lower = wall.find(1)]
+[head_upper = wall.find(2)]
+define lower_head_force
+    lower_head_force = wall.force.contact(head_lower,2)
+end
+define upper_head_force
+    upper_head_force = wall.force.contact(head_upper,2)
+end
+define head_closure
+    head_closure = wall.disp(head_lower,2) - wall.disp(head_upper,2)
+end
+
+history id 1 @lower_head_force
+history id 2 @upper_head_force
+history id 3 @head_closure
+history nstep 20
+wall attribute yvelocity 1.0e-4 range id 1
+wall attribute yvelocity -1.0e-4 range id 2
+cycle 1200
+wall attribute yvelocity 0.0 range id 1 2
+save 'marshall_head_contact_pilot'
+return

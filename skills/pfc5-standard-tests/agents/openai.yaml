@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Standard Tests"
+  short_description: "Plan and measure PFC5 asphalt calibration tests"
+  default_prompt: "Use $pfc5-standard-tests to plan or audit a PFC 5.0 asphalt calibration test and extract its metrics."

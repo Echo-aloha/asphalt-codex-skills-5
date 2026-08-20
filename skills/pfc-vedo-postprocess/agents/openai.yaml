@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC vedo Postprocess"
+  short_description: "Render PFC particles, force chains, cracks, and fields"
+  default_prompt: "Use $pfc-vedo-postprocess to render PFC particle, force-chain, crack, displacement, velocity, or shear-band data as publication-quality vedo figures or animations."

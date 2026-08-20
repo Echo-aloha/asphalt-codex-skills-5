@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 FISH"
+  short_description: "Author and audit PFC5 FISH controllers and histories"
+  default_prompt: "Use $pfc5-fish to write or audit version-pure PFC 5.0 FISH for an asphalt case."

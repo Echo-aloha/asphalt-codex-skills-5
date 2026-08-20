@@ -1,0 +1,33 @@
+; Minimal PFC3D 5.0-compatible Burger contact execution probe.
+; Parameters are numerical probes only and are not asphalt calibration values.
+; runtime_validated: true (manual smoke record; see docs/pfc5-runtime-verification.md)
+new
+title 'PFC5 Burger two-ball relaxation probe'
+domain extent -0.20 0.20
+
+cmat default model burger property bur_knk 8.0e7 bur_cnk 1.5e8 ...
+    bur_knm 1.2e8 bur_cnm 2.0e8 ...
+    bur_ksk 6.0e7 bur_csk 1.2e8 ...
+    bur_ksm 9.0e7 bur_csm 1.8e8 bur_fric 0.0
+
+ball create id 1 radius 0.05 position (0.0,0.0,0.0)
+ball create id 2 radius 0.05 position (0.0,0.0,0.095)
+ball attribute density 2500.0
+ball fix x y z spin
+clean
+
+[probe_contact = contact.find('ball-ball',1)]
+define probe_force
+    ; bur_force uses contact-local coordinates; component 1 is the normal force.
+    probe_force = comp.x(contact.prop(probe_contact,'bur_force'))
+end
+define probe_time
+    probe_time = mech.age
+end
+
+history id 1 @probe_force
+history id 2 @probe_time
+history nstep 50
+solve time 0.05
+save 'burger_contact_probe'
+return

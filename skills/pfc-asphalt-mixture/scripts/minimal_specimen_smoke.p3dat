@@ -1,0 +1,20 @@
+; Independently authored PFC3D 5.0 command-flow smoke test.
+; This is a six-wall particle assembly, not a calibrated asphalt specimen.
+; runtime_validated: true (manual smoke record; see docs/pfc5-runtime-verification.md)
+new
+title 'PFC5 minimal six-wall specimen smoke test'
+domain extent -0.03 0.03 -0.03 0.03 -0.03 0.03 condition destroy
+
+cmat default model linear property kn 2.0e6 ks 8.0e5 fric 0.35 dp_nratio 0.2
+wall generate box -0.02 0.02 -0.02 0.02 -0.02 0.02
+
+set random 24681
+ball distribute porosity 0.38 radius 0.0025 0.0040 box -0.017 0.017 -0.017 0.017 -0.017 0.017
+ball attribute density 2500.0 damp 0.7
+set gravity 9.81
+
+cycle 300 calm 20
+cycle 1200 calm 50
+calm
+save 'minimal_specimen_smoke'
+return

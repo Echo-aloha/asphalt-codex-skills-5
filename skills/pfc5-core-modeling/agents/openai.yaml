@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Core Modeling"
+  short_description: "Build and audit PFC5 asphalt model foundations"
+  default_prompt: "Use $pfc5-core-modeling to design or audit a version-pure PFC 5.0 asphalt model foundation."

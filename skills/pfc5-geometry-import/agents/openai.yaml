@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Geometry Import"
+  short_description: "Validate CAD and mesh contracts for PFC5 asphalt cases"
+  default_prompt: "Use $pfc5-geometry-import to validate and hand off portable geometry for a PFC 5.0 asphalt model."

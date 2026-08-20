@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "ledger_purpose": "Bind reviewed method claims to source identity without redistributing standards text.",
+  "standards_text_bundled": false,
+  "review_policy": {
+    "reviewed_by": "Codex-assisted visual review",
+    "reviewed_on": "2026-08-19",
+    "human_confirmation_required_for_normative_use": true,
+    "digest_scope": "SHA-256 of the user-supplied licensed PDF copy",
+    "page_locator": "printed page, not PDF viewer page"
+  },
+  "sources": [
+    {
+      "designation": "JTG 3410-2025",
+      "title": "公路工程沥青及沥青混合料试验规程",
+      "source_id": "user-supplied-licensed-copy:jtg-3410-2025",
+      "file_name": "JTG 3410-2025 公路工程沥青及沥青混合料试验规程.pdf",
+      "sha256": "1B57C826AE26397C85C76497BF4724D7E53DD20BFC4C3F6E988F2E85A3B33A6F",
+      "bytes": 34052168,
+      "review_scope": [
+        "cover and contents",
+        "binder rheology method classification",
+        "specimen forming chain",
+        "T 0709-2025 Marshall contract",
+        "T 0719-2025 wheel-tracking contract"
+      ],
+      "methods": [
+        {
+          "method_id": "T 0627-2011",
+          "printed_page_start": 166,
+          "material_level": "asphalt binder",
+          "claims": {
+            "instrument_family": "BBR",
+            "dem_use": "binder-scale prior or constraint unless the modeled mastic itself was tested"
+          }
+        },
+        {
+          "method_id": "T 0628-2011",
+          "printed_page_start": 176,
+          "material_level": "asphalt binder",
+          "claims": {
+            "instrument_family": "DSR",
+            "dem_use": "binder-scale prior or constraint unless the modeled mastic itself was tested"
+          }
+        },
+        {
+          "method_id": "T 0647-2025",
+          "printed_page_start": 185,
+          "material_level": "asphalt binder",
+          "claims": {
+            "instrument_family": "MSCR",
+            "dem_use": "nonlinearity and recovery constraint; no direct parameter rename"
+          }
+        },
+        {
+          "method_id": "T 0648-2025",
+          "printed_page_start": 189,
+          "material_level": "asphalt binder",
+          "claims": {
+            "instrument_family": "LAS",
+            "dem_use": "damage or fatigue constraint; Burger alone does not create cracks"
+          }
+        },
+        {
+          "method_id": "T 0702-2025",
+          "printed_page_start": 325,
+          "material_level": "asphalt mixture specimen",
+          "claims": {
+            "role": "impact-compacted specimen forming handoff for Marshall work"
+          }
+        },
+        {
+          "method_id": "T 0709-2025",
+          "printed_pages_reviewed": [372, 373, 374, 375, 376, 377],
+          "material_level": "asphalt mixture specimen",
+          "claims": {
+            "continuous_load_deformation_curve": true,
+            "origin_correction_required": true,
+            "unclear_peak_branch_required": true,
+            "condition_branches": ["dry", "immersed", "vacuum-saturated"]
+          }
+        },
+        {
+          "method_id": "T 0719-2025",
+          "printed_pages_reviewed": [441, 442, 443, 444, 445],
+          "material_level": "asphalt mixture specimen",
+          "claims": {
+            "count_unit": "wheel passes",
+            "normal_t1_passes": 1890,
+            "normal_t2_passes": 2520,
+            "interval_passes": 630,
+            "fixed_measurement_positions": 7,
+            "width_coefficient": "C1"
+          }
+        }
+      ]
+    },
+    {
+      "designation": "JTG 3432-2024",
+      "title": "公路工程集料试验规程",
+      "source_id": "user-supplied-licensed-copy:jtg-3432-2024",
+      "file_name": "JTG 3432-2024 公路工程集料试验规程.pdf",
+      "sha256": "F601711CCEC5E76891B7C7CDD446F1593ADD85FCF360B63DFBE158B15F9FBEAD",
+      "bytes": 12065705,
+      "review_scope": ["cover and contents", "aggregate method-family role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG 3450-2019",
+      "title": "公路路基路面现场测试规程",
+      "source_id": "user-supplied-licensed-copy:jtg-3450-2019",
+      "file_name": "JTG 3450-2019 公路路基路面现场测试规程.pdf",
+      "sha256": "7FCDC8367FBB2D80C78A23EBAA02710B1AA6020C57C236A4E43DAF2972DAFF55",
+      "bytes": 7229248,
+      "review_scope": ["cover and contents", "field-validation role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG 5110-2023",
+      "title": "公路养护技术标准",
+      "source_id": "user-supplied-licensed-copy:jtg-5110-2023",
+      "file_name": "JTG 5110-2023 公路养护技术标准.pdf",
+      "sha256": "E676D296456734D29902763595DAEE3052DEA5B917DB255D04F1CDA0836B6213",
+      "bytes": 3513387,
+      "review_scope": ["cover and contents", "maintenance-context role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG 5142-2019",
+      "title": "公路沥青路面养护技术规范",
+      "source_id": "user-supplied-licensed-copy:jtg-5142-2019",
+      "file_name": "JTG 5142-2019 公路沥青路面养护技术规范.pdf",
+      "sha256": "8268079B842BB3074CB904AAEF708292DCACEA268176B291A1E191AED9F96B41",
+      "bytes": 55852272,
+      "review_scope": ["cover and contents", "asphalt-maintenance role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG 5210-2018",
+      "title": "公路技术状况评定标准",
+      "source_id": "user-supplied-licensed-copy:jtg-5210-2018",
+      "file_name": "JTG 5210-2018 公路技术状况评定标准.pdf",
+      "sha256": "0AAF7E221FDD2DDB94E0B105AE0F7E161361DDE21042C45220BBB0E3DA3F47E4",
+      "bytes": 1173644,
+      "review_scope": ["cover and contents", "condition-rating role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG D30-2015",
+      "title": "公路路基设计规范",
+      "source_id": "user-supplied-licensed-copy:jtg-d30-2015",
+      "file_name": "JTG D30-2015 公路路基设计规范.pdf",
+      "sha256": "E8869C4328C55BBFA9401A4EA6880854109B4405DF8314EE1A1CF93F02D946AC",
+      "bytes": 7861825,
+      "review_scope": ["cover and contents", "subgrade-boundary role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG D50-2017",
+      "title": "公路沥青路面设计规范",
+      "source_id": "user-supplied-licensed-copy:jtg-d50-2017",
+      "file_name": "JTG D50-2017 公路沥青路面设计规范.pdf",
+      "sha256": "3FA62804E0D46E9015F180D6F05DC90176E916B8697576C6DC66A23A8B2202E5",
+      "bytes": 2865435,
+      "review_scope": ["cover and contents", "pavement-design role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG F40-2004",
+      "title": "公路沥青路面施工技术规范",
+      "source_id": "user-supplied-licensed-copy:jtg-f40-2004",
+      "file_name": "JTG F40-2004 公路沥青路面施工技术规范.pdf",
+      "sha256": "EDDF8846D09F5A65851CB7E9A0F2A9691B7F3BC2348A23EAFB278578E3E8C2EF",
+      "bytes": 20789790,
+      "review_scope": ["cover and contents", "construction and mix-design context classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG F80/1-2017",
+      "title": "公路工程质量检验评定标准 第一册 土建工程",
+      "source_id": "user-supplied-licensed-copy:jtg-f80-1-2017",
+      "file_name": "JTG F801-2017 公路工程质量检验评定标准 第一册 土建工程.pdf",
+      "sha256": "F881DE8482A1F898AB3CE9EA4D67DC4A1D819EE139869A45983C84DE43A0F713",
+      "bytes": 71388618,
+      "review_scope": ["cover and contents", "acceptance-context role classification"],
+      "methods": []
+    },
+    {
+      "designation": "JTG/T 3610-2019",
+      "title": "公路路基施工技术规范",
+      "source_id": "user-supplied-licensed-copy:jtg-t3610-2019",
+      "file_name": "JTG T3610-2019 公路路基施工技术规范.pdf",
+      "sha256": "87EBBC137E819AB0CAD05B61A40D54AA9F5C18458C018BB39B5BAD8D528A8F26",
+      "bytes": 2122144,
+      "review_scope": ["cover and contents", "subgrade-construction context classification"],
+      "methods": []
+    }
+  ]
+}

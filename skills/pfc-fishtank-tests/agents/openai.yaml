@@ -1,0 +1,4 @@
+interface:
+  display_name: "FISHTank Standard Test Framework"
+  short_description: "Validate and adapt external PFC5 fistPkg26 projects"
+  default_prompt: "Use $pfc-fishtank-tests to validate an external licensed fistPkg26 tree, run an unchanged PFC 5.0 baseline, and document any asphalt-case adaptations."

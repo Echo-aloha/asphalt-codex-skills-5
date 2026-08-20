@@ -1,0 +1,4 @@
+interface:
+  display_name: "Marshall Stability / Flow Test"
+  short_description: "Adapt and validate a PFC5 Marshall test controller"
+  default_prompt: "Use $pfc-marshall-test to adapt a private fistPkg26 dc.fis working copy for curved Marshall heads, audit controller assumptions, and compute edition-specific stability and flow."

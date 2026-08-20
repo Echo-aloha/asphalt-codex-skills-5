@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC Postprocessing"
+  short_description: "Plot PFC5 asphalt CSV data and image-frame animations"
+  default_prompt: "Use $pfc-postprocessing to validate PFC 5.0 asphalt export contracts and generate reproducible curves, fields, rose plots, animations, and summary tables."

@@ -1,0 +1,5 @@
+{
+  "requires": [
+    {"skill": "pfc-burger-viscoelastic", "paths": ["SKILL.md", "references/calibration.md"]}
+  ]
+}

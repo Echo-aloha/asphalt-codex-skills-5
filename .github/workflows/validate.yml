@@ -1,0 +1,51 @@
+name: Validate PFC5 skills plugin
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  repository:
+    name: ${{ matrix.os }} / Python ${{ matrix.python-version }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install validation dependencies
+        run: python -m pip install --upgrade pip
+      - name: Install core and test dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Validate plugin, skills, links, and release policy
+        run: python scripts/validate_skills.py
+      - name: Run deterministic tests
+        run: python -m pytest -q
+      - name: Check bundled demo inputs
+        run: python skills/pfc-postprocessing/scripts/run_demo.py --check-only
+      - name: Check runtime evidence hashes
+        run: python skills/pfc5-asphalt-workflow/scripts/check_runtime_manifest.py
+
+  optional-visualization-dependencies:
+    name: Optional visualization import smoke
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install full visualization dependencies
+        run: python -m pip install -r requirements-visualization.txt
+      - name: Import optional backends
+        run: python -c "import cv2, imageio_ffmpeg, vedo"

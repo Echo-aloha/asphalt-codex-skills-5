@@ -1,0 +1,5 @@
+{
+  "requires": [
+    {"skill": "pfc-rutting-test", "paths": ["SKILL.md", "references/modeling-strategy.md"]}
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "verification_date": "2026-08-18",
+  "manifest_updated": "2026-08-19",
+  "product": "PFC3D",
+  "version_family": "5.0",
+  "runtime_build": "5.00.25",
+  "evidence_quality": "manual-record-no-archived-log",
+  "evidence_limitations": [
+    "Console logs and process exit codes were not retained.",
+    "Temporary P3SAV outputs were not retained or hashed.",
+    "Hashes were rebound after adding comment-only runtime-status annotations; no new PFC execution was claimed.",
+    "The record confirms smoke/pilot execution only, not a production asphalt workflow."
+  ],
+  "assets": [
+    {
+      "path": "skills/pfc-asphalt-mixture/scripts/minimal_specimen_smoke.p3dat",
+      "sha256": "eba9e8e25682cea1a2b44011658d3aca4edb7e3aa7f7fe0fb45db6de442577fb",
+      "reported_result": "passed",
+      "exit_code": null,
+      "retained_log": null,
+      "retained_save": null,
+      "observation": "Created six walls and 157 balls, ran finite gravity-settlement cycles, and created a temporary save."
+    },
+    {
+      "path": "skills/pfc-burger-viscoelastic/scripts/burger_contact_probe.p3dat",
+      "sha256": "d19cd36e570248ef4c212d0c002425db3a7d78a84908db94cd7cb97437cf1881",
+      "reported_result": "passed",
+      "exit_code": null,
+      "retained_log": null,
+      "retained_save": null,
+      "observation": "Created a Burger contact; at approximately t=0.0500 the local normal force was approximately 5.60e5."
+    },
+    {
+      "path": "skills/pfc-marshall-test/scripts/marshall_head_contact_pilot.p3dat",
+      "sha256": "4d8876c2f18ac9f98990d65f49ed9565eb19ea315dd4a08425a8830fc26b81ef",
+      "reported_result": "passed",
+      "exit_code": null,
+      "retained_log": null,
+      "retained_save": null,
+      "observation": "Reported final curved-head reactions of approximately -60.30 and +60.30 with closure approximately 1.28e-5."
+    },
+    {
+      "path": "skills/pfc-rutting-test/scripts/rutting_contact_pilot.p3dat",
+      "sha256": "af34db85a77e5633a941915fa5ac7a3927a30d76e963e1d06ef3c89d77b076b8",
+      "reported_result": "passed",
+      "exit_code": null,
+      "retained_log": null,
+      "retained_save": null,
+      "observation": "Reported final vertical wheel force approximately 4.07e4, travel approximately 2.84e-3, and sink approximately 9.40e-5."
+    }
+  ]
+}

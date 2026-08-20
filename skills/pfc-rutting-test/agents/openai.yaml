@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rutting (Wheel-Tracking) Test"
+  short_description: "Build and validate PFC5 wheel-tracking models"
+  default_prompt: "Use $pfc-rutting-test to design a PFC3D 5.0 wheel-tracking model with verified reaction-force control, RVE-to-strip gates, raw rut histories, and edition-specific metrics."

@@ -1,0 +1,7 @@
+{
+  "requires": [
+    {"skill": "pfc-asphalt-mixture", "paths": ["SKILL.md", "scripts/minimal_specimen_smoke.p3dat"]},
+    {"skill": "pfc-fishtank-tests", "paths": ["SKILL.md", "scripts/check_fistpkg.py"]},
+    {"skill": "pfc5-asphalt-workflow", "paths": ["references/standards-policy.md", "references/standards-method-map.md", "references/standards-source-ledger.json"]}
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "requires": [
+    {"skill": "pfc5-asphalt-workflow", "paths": ["references/standards-method-map.md"]},
+    {"skill": "pfc-fishtank-tests", "paths": ["SKILL.md", "scripts/check_fistpkg.py"]},
+    {"skill": "pfc-postprocessing", "paths": ["SKILL.md", "references/data-contract.md"]}
+  ]
+}

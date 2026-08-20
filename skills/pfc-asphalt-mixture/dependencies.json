@@ -1,0 +1,12 @@
+{
+  "requires": [
+    {
+      "skill": "pfc5-asphalt-workflow",
+      "paths": ["SKILL.md", "templates/pfc5-asphalt-intake.yaml", "references/standards-method-map.md"]
+    },
+    {
+      "skill": "pfc-burger-viscoelastic",
+      "paths": ["SKILL.md", "references/pfc-command.md"]
+    }
+  ]
+}

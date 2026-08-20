@@ -1,0 +1,5 @@
+{
+  "requires": [
+    {"skill": "pfc5-core-modeling", "paths": ["SKILL.md", "scripts/audit_pfc5_case.py"]}
+  ]
+}

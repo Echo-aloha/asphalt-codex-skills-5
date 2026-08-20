@@ -1,0 +1,17 @@
+{
+  "requires": [
+    {"skill": "pfc5-core-modeling", "paths": ["SKILL.md", "scripts/audit_pfc5_case.py"]},
+    {"skill": "pfc5-fish", "paths": ["SKILL.md", "scripts/audit_pfc5_fish.py"]},
+    {"skill": "pfc5-servo-calibration", "paths": ["SKILL.md", "scripts/servo_gain.py", "scripts/dual_target_solver.py"]},
+    {"skill": "pfc5-geometry-import", "paths": ["SKILL.md", "scripts/validate_geometry_csv.py"]},
+    {"skill": "pfc5-standard-tests", "paths": ["SKILL.md", "scripts/extract_test_metrics.py"]},
+    {"skill": "pfc5-dynamics-wave", "paths": ["SKILL.md", "scripts/check_dynamic_resolution.py"]},
+    {"skill": "pfc5-ae-energy", "paths": ["SKILL.md", "scripts/cluster_ae_events.py", "scripts/ae_energy_metrics.py"]},
+    {"skill": "pfc5-coupling", "paths": ["SKILL.md", "scripts/validate_coupling_contract.py"]},
+    {"skill": "pfc-asphalt-mixture", "paths": ["SKILL.md", "scripts/minimal_specimen_smoke.p3dat"]},
+    {"skill": "pfc-burger-viscoelastic", "paths": ["SKILL.md", "scripts/burger_contact_probe.p3dat"]},
+    {"skill": "pfc-fishtank-tests", "paths": ["SKILL.md", "scripts/check_fistpkg.py"]},
+    {"skill": "pfc-marshall-test", "paths": ["SKILL.md", "scripts/marshall_head_contact_pilot.p3dat"]},
+    {"skill": "pfc-rutting-test", "paths": ["SKILL.md", "scripts/rutting_contact_pilot.p3dat"]}
+  ]
+}

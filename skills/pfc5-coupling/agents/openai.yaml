@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Coupling"
+  short_description: "Validate PFC5 fluid and continuum coupling contracts"
+  default_prompt: "Use $pfc5-coupling to define and validate a PFC 5.0 asphalt coupling contract."

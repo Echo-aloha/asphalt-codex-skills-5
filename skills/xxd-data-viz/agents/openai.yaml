@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chinese Color Data Viz"
+  short_description: "Build accessible charts with Chinese traditional colors"
+  default_prompt: "Use $xxd-data-viz to choose a Chinese-traditional-color palette for categorical, sequential, diverging, highlight, dashboard, map, or web-chart data."

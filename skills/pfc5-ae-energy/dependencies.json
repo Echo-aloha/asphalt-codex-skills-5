@@ -1,0 +1,5 @@
+{
+  "requires": [
+    {"skill": "pfc-postprocessing", "paths": ["SKILL.md", "references/data-contract.md"]}
+  ]
+}

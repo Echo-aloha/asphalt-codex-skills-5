@@ -1,0 +1,12 @@
+{
+  "requires": [
+    {
+      "skill": "pfc5-asphalt-workflow",
+      "paths": [
+        "SKILL.md",
+        "references/standards-method-map.md",
+        "references/standards-source-ledger.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Asphalt PFC Skill Pack"
+  short_description: "Govern PFC5 asphalt routing and package compatibility"
+  default_prompt: "Use $pfc-skill-pack to audit Asphalt-Codex-Skills-5 routing, portability, version boundaries, external fistPkg policy, and package metadata."

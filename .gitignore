@@ -1,0 +1,52 @@
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# External knowledge-base checkouts
+.cache/
+
+# PFC/Itasca generated outputs and private projects
+*.sav
+*.p2sav
+*.p3sav
+*.p2prj
+*.p3prj
+*.prj
+*.log
+*.out
+*.dat~
+
+# Large/generated visualization outputs
+*.avi
+*.mp4
+*.mov
+*.gif
+*.tif
+*.tiff
+*.pdf
+*.zip
+*.7z
+*.rar
+*_output*/
+outputs/
+figures/generated/
+
+# Binary helper apps should be replaced by source or documented as external deps
+*.exe
+*.dll
+
+# Local case data and private calibration runs
+data/
+runs/
+calibration_runs/
+private/

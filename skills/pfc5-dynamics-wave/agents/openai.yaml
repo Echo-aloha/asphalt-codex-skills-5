@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Dynamics And Waves"
+  short_description: "Check PFC5 dynamic loading and wave resolution"
+  default_prompt: "Use $pfc5-dynamics-wave to design and check a PFC 5.0 asphalt dynamic or stress-wave study."
