@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.0-preview.5 - 2026-08-23
+
+- Add `pfc5-case-handoff` for privacy-safe migration, restore-first auditing,
+  interrupted-run recovery, state classification, integrity checks and legacy-state
+  quarantine of existing private PFC5 asphalt cases.
+- Add a generic read-only handoff auditor and empty private manifest template; neither
+  asset contains project paths, parameters, data, source excerpts or saved states.
+- Route existing-case work through a cheap integrity/restore audit before a full rebuild,
+  while preserving the original acceptance gates and authorization boundaries.
+
 ## 0.1.0-preview.4 - 2026-08-19
 
 - Document the upstream `jiangnan030-del/pfc-codex-skills` provenance, preserve its

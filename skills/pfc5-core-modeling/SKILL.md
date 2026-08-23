@@ -15,10 +15,12 @@ without restoring newer-major command files.
 - create domains, walls, balls, clumps, groups, or ranges;
 - plan current-contact versus future-contact model assignment;
 - organize build, compaction, contact installation, equilibrium, and save stages;
+- classify accepted, restart-only, diagnostic-only, failed, and obsolete states;
 - detect unsupported-version syntax in a PFC5 source tree.
 
 Route detailed gradation/void closure to `pfc-asphalt-mixture`, FISH to
-`pfc5-fish`, and servo/calibration to `pfc5-servo-calibration`.
+`pfc5-fish`, servo/calibration to `pfc5-servo-calibration`, and migration or recovery
+of an existing private case to `pfc5-case-handoff`.
 
 ## Required Inputs
 
@@ -39,6 +41,10 @@ Route detailed gradation/void closure to `pfc-asphalt-mixture`, FISH to
 7. Install final contacts transactionally: save, apply, cycle, audit, solve, save.
 8. Initialize measurements before loading.
 9. Run `scripts/audit_pfc5_case.py` and an actual PFC5 syntax probe.
+
+For an existing project, restore and audit the last claimed accepted state before a
+full rebuild. A restart-only state may seed a recovery branch only when its object and
+geometry invariants are known; re-run the original final gates without weakening them.
 
 Read [stage-gates.md](references/stage-gates.md) for lifecycle checks and
 [pfc5-command-boundary.md](references/pfc5-command-boundary.md) when auditing
