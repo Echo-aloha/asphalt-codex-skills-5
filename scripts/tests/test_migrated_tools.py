@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import hashlib
 import json
 import os
 import subprocess
@@ -33,6 +34,65 @@ def run_script(relative: str, *args: object, expected: int = 0) -> tuple[subproc
 
 
 class MigratedToolTests(unittest.TestCase):
+    def test_private_case_handoff_auditor(self) -> None:
+        with tempfile.TemporaryDirectory() as raw:
+            root = Path(raw)
+            case_dir = root / "case"
+            common_dir = root / "common"
+            case_dir.mkdir()
+            common_dir.mkdir()
+            helper = common_dir / "helper.p3fis"
+            helper.write_text("def helper\n  value = 1\nend\n", encoding="utf-8")
+            state = case_dir / "accepted.p3sav"
+            state.write_bytes(b"synthetic-save-placeholder")
+            driver = case_dir / "main.p3dat"
+            driver.write_text(
+                "call '../common/helper.p3fis'\nrestore 'accepted.p3sav'\n",
+                encoding="utf-8",
+            )
+            manifest = root / "checksums.csv"
+            rows = []
+            for path in (helper, state, driver):
+                rows.append(
+                    (
+                        path.relative_to(root).as_posix(),
+                        hashlib.sha256(path.read_bytes()).hexdigest(),
+                    )
+                )
+            with manifest.open("w", encoding="utf-8", newline="") as handle:
+                writer = csv.writer(handle)
+                writer.writerow(("relative_path", "sha256"))
+                writer.writerows(rows)
+
+            _, report = run_script(
+                "skills/pfc5-case-handoff/scripts/audit_pfc5_handoff.py",
+                root,
+                "--expected-major",
+                5,
+                "--checksums",
+                manifest,
+            )
+            self.assertTrue(report["ok"])
+            self.assertEqual(report["references_checked"], 2)
+            self.assertEqual(report["checksum_rows"], 3)
+            self.assertFalse(report["runtime_validated"])
+
+            driver.write_text(
+                "call 'missing.p3fis'\nsave '" + "C:" + "/private/output' localdir\nPFC 7\n",
+                encoding="utf-8",
+            )
+            _, rejected = run_script(
+                "skills/pfc5-case-handoff/scripts/audit_pfc5_handoff.py",
+                root,
+                "--redact-paths",
+                expected=1,
+            )
+            self.assertFalse(rejected["ok"])
+            codes = {item["code"] for item in rejected["findings"]}
+            self.assertIn("missing_dependency", codes)
+            self.assertIn("private_absolute_path", codes)
+            self.assertIn("unsupported_major_marker", codes)
+
     def test_core_and_fish_auditors(self) -> None:
         with tempfile.TemporaryDirectory() as raw:
             base = Path(raw)

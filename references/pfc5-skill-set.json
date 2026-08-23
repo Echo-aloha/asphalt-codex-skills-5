@@ -11,6 +11,7 @@
     "pfc-vedo-postprocess",
     "pfc5-ae-energy",
     "pfc5-asphalt-workflow",
+    "pfc5-case-handoff",
     "pfc5-core-modeling",
     "pfc5-coupling",
     "pfc5-dynamics-wave",

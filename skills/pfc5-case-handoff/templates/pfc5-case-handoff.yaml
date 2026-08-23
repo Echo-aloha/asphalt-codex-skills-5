@@ -1,0 +1,70 @@
+schema_version: 1
+
+scope:
+  private_case_root: "<PRIVATE_CASE_ROOT>"
+  migration_copy_root: "<MIGRATION_COPY_ROOT>"
+  source_copy_protected: true
+  included_branches: []
+  excluded_or_paused_branches: []
+
+privacy:
+  classification: private
+  public_release_allowed: false
+  externally_reportable_fields:
+    - finding_categories
+    - finding_counts
+    - validation_status
+    - unresolved_gate_names
+
+runtime:
+  product: PFC2D_or_PFC3D
+  required_major_version: "5.0"
+  observed_release: unresolved
+  executable_locator: "<PRIVATE_RUNTIME_PATH>"
+  runtime_validated: false
+
+integrity:
+  checksum_manifest: "<RELATIVE_PATH_OR_NOT_AVAILABLE>"
+  verified_at: unresolved
+  result: pending
+
+entrypoints:
+  - id: "<ENTRYPOINT_ID>"
+    path: "<RELATIVE_PATH>"
+    working_directory: "<RELATIVE_CWD>"
+    state_class: unknown
+    purpose: "<PURPOSE>"
+    recommended: false
+
+saved_states:
+  - id: "<STATE_ID>"
+    path: "<RELATIVE_PATH>"
+    state_class: unknown
+    claimed_stage: "<STAGE>"
+    object_invariants: []
+    geometry_invariants: []
+    equilibrium_invariants: []
+    contact_state: unresolved
+    safe_recovery_parent: false
+
+external_dependencies:
+  - id: "<DEPENDENCY_ID>"
+    role: "<ROLE>"
+    bundled: false
+    legal_source: "<USER_CONTROLLED_SOURCE>"
+    expected_layout: "<RELATIVE_LAYOUT>"
+    digest: optional
+
+first_machine_audit:
+  allowed_action: restore_and_bounded_audit_only
+  claimed_last_good_state: "<STATE_ID>"
+  overwrite_existing_accepted_state: false
+  expensive_rebuild_authorized: false
+  checks: []
+  result: pending
+
+next_phase:
+  authorized_scope: "<CURRENT_SCOPE>"
+  actions_requiring_confirmation: []
+
+unresolved_gates: []

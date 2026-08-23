@@ -1,0 +1,4 @@
+interface:
+  display_name: "PFC5 Case Handoff"
+  short_description: "Audit and migrate private PFC5 asphalt cases"
+  default_prompt: "Use $pfc5-case-handoff to audit and prepare this private PFC5 case for a portable handoff."

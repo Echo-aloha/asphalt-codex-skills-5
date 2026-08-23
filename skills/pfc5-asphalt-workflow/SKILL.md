@@ -1,6 +1,6 @@
 ---
 name: pfc5-asphalt-workflow
-description: Orchestrate PFC2D/PFC3D 5.0 asphalt-mixture specimen generation, fistPkg26 integration, Burger calibration, Marshall or rutting tests, validation, and reproducible delivery; use whenever a user mentions PFC5 asphalt, AC mixtures, fistPkg, Marshall, wheel tracking, or rutting.
+description: Orchestrate PFC2D/PFC3D 5.0 asphalt-mixture case handoff, specimen generation, fistPkg26 integration, Burger calibration, Marshall or rutting tests, validation, and reproducible delivery; use whenever a user mentions PFC5 asphalt, AC mixtures, fistPkg, Marshall, wheel tracking, or rutting.
 ---
 
 # PFC5 Asphalt Workflow
@@ -18,6 +18,7 @@ Use this skill when the request includes one or more of:
 - Burger viscoelastic contacts for asphalt mortar;
 - Marshall stability/flow or wheel-tracking/rutting;
 - auditing an existing asphalt case for unsupported-version contamination.
+- migrating, restoring, or resuming an existing private PFC5 asphalt case.
 
 If the user targets another PFC major version, stop and state that this package is
 out of scope; do not route to a removed sibling or translate commands implicitly.
@@ -62,6 +63,14 @@ the standards text.
   a minimal syntax probe and the intended pilot case.
 
 ## Workflow
+
+### P-1 — Audit an existing private case
+
+When the request starts from an existing project, route first to `pfc5-case-handoff`.
+Protect the source, freeze included/excluded branches, verify integrity and portable
+dependencies, then restore the claimed last-good save and run a bounded audit before any
+full rebuild. Keep accepted, restart-only, diagnostic-only and obsolete states distinct.
+Skip this phase for a genuinely new case.
 
 ### P0 — Freeze the case contract
 
@@ -159,6 +168,7 @@ Required checks:
 
 | Need | Skill |
 | --- | --- |
+| private-case migration, restore-first audit and handoff | `pfc5-case-handoff` |
 | command skeleton, stages, contact lifecycle, source audit | `pfc5-core-modeling` |
 | PFC5 FISH functions, histories and callbacks | `pfc5-fish` |
 | servo control and guarded calibration updates | `pfc5-servo-calibration` |

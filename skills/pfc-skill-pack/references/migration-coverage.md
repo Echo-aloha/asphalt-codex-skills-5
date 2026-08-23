@@ -9,6 +9,7 @@ does not mean restoring the old command files.
 | Former capability | PFC5 owner | Retained result |
 | --- | --- | --- |
 | end-to-end workflow | `pfc5-asphalt-workflow`, `pfc5-core-modeling` | staged case contract, saves, audit and delivery gates |
+| private case migration and interrupted-run recovery | `pfc5-case-handoff` | integrity manifest, restore-first audit, state classification, portable paths and legacy quarantine |
 | basic elements and contact lifecycle | `pfc5-core-modeling` | boundary/object sequence, present-versus-future contact assignment |
 | FISH programming | `pfc5-fish` | `def`/`end`, histories, command blocks and callback activation probes |
 | servo and modeling techniques | `pfc5-servo-calibration` | sign probe, bounded gain, target ledger and validation sequence |

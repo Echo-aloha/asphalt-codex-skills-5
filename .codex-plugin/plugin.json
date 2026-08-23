@@ -1,6 +1,6 @@
 {
   "name": "asphalt-codex-skills-5",
-  "version": "0.1.0-preview.4",
+  "version": "0.1.0-preview.5",
   "description": "PFC 5.0-only asphalt-mixture modeling, calibration, testing, and post-processing skills for Codex.",
   "author": {
     "name": "Asphalt Codex Skills contributors"
@@ -16,7 +16,7 @@
   "interface": {
     "displayName": "Asphalt Codex Skills 5",
     "shortDescription": "Build and audit PFC 5.0 asphalt workflows.",
-    "longDescription": "Eighteen version-pure skills for PFC 5.0 asphalt specimens, Burger calibration, tests, dynamics, coupling, and reproducible post-processing.",
+    "longDescription": "Nineteen version-pure skills for PFC 5.0 case handoff, asphalt specimens, Burger calibration, tests, dynamics, coupling, and reproducible post-processing.",
     "developerName": "Asphalt Codex Skills contributors",
     "category": "Productivity",
     "capabilities": [
