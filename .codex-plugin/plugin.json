@@ -1,6 +1,6 @@
 {
   "name": "asphalt-codex-skills-5",
-  "version": "0.1.0-preview.5",
+  "version": "0.1.0-preview.6",
   "description": "PFC 5.0-only asphalt-mixture modeling, calibration, testing, and post-processing skills for Codex.",
   "author": {
     "name": "Asphalt Codex Skills contributors"

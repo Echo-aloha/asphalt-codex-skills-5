@@ -1,6 +1,6 @@
 # Asphalt Codex Skills 5
 
-> **Preview release:** `0.1.0-preview.5`. The public API, skill routing, and
+> **Preview release:** `0.1.0-preview.6`. The public API, skill routing, and
 > packaging layout may still change before `1.0.0`.
 
 这是一个面向 **ITASCA PFC2D/PFC3D 5.0 沥青混合料建模** 的专用 Skills 包。它覆盖私有案例迁移与断点恢复、核心建模与 FISH、几何导入、伺服标定、试件生成、标准力学试验、动力与应力波、AE/能量、条件性耦合、Burger 黏弹接触、外部 fistPkg26 基线、Marshall、车辙试验以及离线后处理。
