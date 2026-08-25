@@ -1,0 +1,11 @@
+sample_id,depth_mid_mm,shear_component,shear_stress_mpa,measure_radius_mm,weighting_rule
+pass_4,5,sxz,0.210,5,volume_weighted_nonoverlap
+pass_4,15,sxz,0.152,5,volume_weighted_nonoverlap
+pass_4,25,sxz,0.101,5,volume_weighted_nonoverlap
+pass_4,35,sxz,0.061,5,volume_weighted_nonoverlap
+pass_4,45,sxz,0.033,5,volume_weighted_nonoverlap
+pass_8,5,sxz,0.238,5,volume_weighted_nonoverlap
+pass_8,15,sxz,0.171,5,volume_weighted_nonoverlap
+pass_8,25,sxz,0.116,5,volume_weighted_nonoverlap
+pass_8,35,sxz,0.074,5,volume_weighted_nonoverlap
+pass_8,45,sxz,0.041,5,volume_weighted_nonoverlap

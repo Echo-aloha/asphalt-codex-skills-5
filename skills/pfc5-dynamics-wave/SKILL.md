@@ -22,7 +22,9 @@ wave-speed checks, or sensor arrival-time studies in a PFC5 asphalt model.
 2. Check direction against model dimension.
 3. Check wavelength-to-spacing and timestep/samples-per-period with
    `scripts/check_dynamic_resolution.py`.
-4. Declare damping changes and reset the loading-time origin.
+4. Declare damping changes and reset the loading-time origin. If energy output is
+   required, enable PFC5 mechanical energy tracking before the measured interval;
+   energy accumulation is off by default.
 5. Test the source and one sensor before the full domain.
 6. Compare free/rigid/absorbing boundary response as required.
 7. Export input, time, timestep, energy, velocity/displacement and sensor signals.
@@ -33,6 +35,8 @@ Read [dynamic-contract.md](references/dynamic-contract.md) for acceptance checks
 ## Working Rules
 
 - Do not use preparation damping or calm operations during a physical response without justification.
+- `calm` zeroes unfixed linear and angular velocities; using it inside the measured
+  response changes the physics rather than merely improving convergence.
 - Do not use density scaling for wave-speed validation.
 - A moving-wheel surrogate is accepted only after comparison with the intended kinematics.
 - Cross-correlation/localization is offline analysis; sensor geometry degeneracy must be reported.

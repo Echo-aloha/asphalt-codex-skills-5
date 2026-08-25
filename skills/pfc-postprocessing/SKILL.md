@@ -10,6 +10,8 @@ Use this skill after a PFC 5.0 asphalt run has exported CSV data or ordered imag
 ## When To Use
 
 - plot stress-strain, Marshall load-flow, creep/recovery, or rut-depth curves;
+- audit intersection-rutting time maps, vertical/horizontal reaction tracking,
+  face-deformation asymmetry, lateral heave and shear-depth profiles;
 - render displacement, velocity, stress, or porosity fields;
 - draw fracture/contact orientation rose diagrams;
 - order exported PNG frames and assemble GIF/MP4 animations;
@@ -25,6 +27,8 @@ Use `pfc-vedo-postprocess` for 3D particle/force-chain scenes. Return physical i
 - requested plots/tables and output formats;
 - sign conventions, coordinate scaling, and any smoothing/transformation rule;
 - standard edition if a normative test metric is requested.
+- for a surrogate rutting case, the signed coordinate/tensor convention, physical-to-
+  solver time map, reaction commands, boundary case and measure-region definition.
 
 ## Script-First Workflow
 
@@ -40,6 +44,7 @@ Use `pfc-vedo-postprocess` for 3D particle/force-chain scenes. Return physical i
 | Need | Script |
 | --- | --- |
 | global curve and peak summary | `scripts/plot_curves.py` |
+| rut/time/vector-reaction/asymmetry/shear evidence | `scripts/plot_rutting_evidence.py` |
 | particle/stress/porosity fields | `scripts/plot_fields.py` |
 | orientation rose diagram | `scripts/plot_rose.py` |
 | normalize image-frame order | `scripts/export_animation_frames.py` |
@@ -63,6 +68,14 @@ python scripts/run_demo.py --check-only
 
 - Do not infer missing columns or units silently.
 - Do not derive normative Marshall/车辙 metrics without the selected standard formula and coefficients.
+- Do not replace equivalent physical time with solver time or solver cycles. Preserve
+  all three columns and the declared `lambda` convention.
+- Keep vertical/horizontal command and signed reaction separate. A friction-demand
+  ratio, contact friction and measured reaction ratio are different quantities.
+- A shear profile must retain tensor component, axes/sign, measure radius, weighting,
+  overlap and sampling state; do not plot an undefined absolute “shear stress”.
+- Keep seven-position/approved normative deformation separate from deepest rut,
+  face asymmetry and lateral-heave diagnostics.
 - Keep global color limits fixed across animation frames.
 - Treat screenshots as presentation outputs, not numerical source data.
 - Keep output directories user-selected for production work; the demo alone may recreate its own `examples/demo_outputs/`.

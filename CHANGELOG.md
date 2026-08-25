@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased
+
+- Audit the PFC-facing skills against the official PFC 5.0 HTML help and correct CMAT
+  replacement/slot order, OR-combined solve limits, `clean`, particle-generation
+  overlap/porosity, clump-volume, FISH callback, wall-motion, energy-tracking and
+  geometry-import semantics.
+- Correct Burger behavior around `bur_mode`, positive-gap inactivity, missing
+  inheritance/method/energy support, and document the PFC5 help's `bur_fric` index-page
+  inconsistency without overriding the official verification example/runtime probe.
+- Add a digest-bound research-evidence note for a 2025 intersection-rutting thesis,
+  while keeping its PFC version, numerical values and research surrogates outside the
+  package's production defaults.
+- Extend Burger calibration with mixed parallel-bond/Burger contact-population audits,
+  tensile-role checks and an explicit accelerated-time invariant/validation contract.
+- Extend rutting workflows for vertical-horizontal braking/acceleration loads, vector
+  reaction control, free/confined boundary sensitivity, deformation asymmetry and
+  tensor-defined shear-depth profiles without conflating them with T 0719 metrics.
+- Add a reproducible rutting-evidence CSV contract, plotting script and public demo data
+  that preserve solver/equivalent time, signed reactions and surrogate provenance.
+
 ## 0.1.0-preview.5 - 2026-08-23
 
 - Add `pfc5-case-handoff` for privacy-safe migration, restore-first auditing,

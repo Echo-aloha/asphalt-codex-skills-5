@@ -17,6 +17,10 @@ T 0719-2025 以往返橡胶轮测定沥青混合料试件动稳定度，评价�
 固定循环压头、加速时间映射或缩尺试件是 DEM 替代路线，不是 T 0719 的规范
 车轮运动；必须通过移动轮 strip pilot 建立等效关系。
 
+交叉路口制动/启动的竖—水平耦合荷载属于研究扩展，不是 T 0719 指标的一部分。
+同一算例可以同时输出规范对标量和交叉口诊断量，但两条结果链必须分开命名、
+分开校核。
+
 ## 2. 试件与计数契约
 
 - 当前方法允许标准宽度室内成型试件和较窄的现场切割试件；宽度会进入动稳定度
@@ -34,6 +38,15 @@ wheel_x, wheel_z, commanded_load, measured_reaction,
 reaction_error, deformation_p1, deformation_p2, deformation_p3,
 deformation_p4, deformation_p5, deformation_p6, deformation_p7,
 mean_deformation, specimen_temperature
+```
+
+交叉口扩展至少追加：
+
+```text
+commanded_vertical_load, measured_vertical_reaction, vertical_reaction_error,
+commanded_horizontal_load, measured_horizontal_reaction, horizontal_reaction_error,
+forward_face_deformation, reverse_face_deformation, lateral_heave,
+time_scale_lambda, equivalent_physical_time, surrogate_route
 ```
 
 ## 3. 变形测量映射
@@ -75,9 +88,17 @@ DS = C1 * (t2 - t1) / (d2 - d1)
 5. **层级**：RVE 验证材料，strip pilot 验证运动/反力/测量，全尺寸模型只在
    前两级通过后运行。
 6. **重复性**：实验试件组与 DEM seeds 分开；模型重复不能代替实验异常值规则。
+7. **耦合荷载**：外部水平需求、轮面摩擦和材料接触摩擦分开记录；同时验证
+   竖/水平反力、滑移和做功。
+8. **剪应力**：输出坐标系、张量分量、符号、measure 区域和体积加权规则；
+   不把不同分量绝对值的混合平均称为同一剪应力。
+9. **边界**：交叉口研究至少比较自由侧向与受限/代表性边界，避免把边界放流
+   造成的颗粒迁移直接解释为现场车辙。
 
 ## 6. 报告边界
 
 报告标准版次和 T 0719-2025、试件来源/制作、密度/空隙率、温度、轮/载荷、
 计数约定、测点协议、原始曲线、DS、车辙深度、重复性和所有 DEM 等效项。
 项目验收阈值来自设计/施工/合同文件，不由 T 0719 试验方法或本 Skill 自动提供。
+等效静载、时间压缩和耦合水平荷载的验证结果单列为研究证据，不改变 T 0719
+规范指标的定义。

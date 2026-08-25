@@ -20,7 +20,9 @@ damage timing, crack/AE hit statistics, event clustering, or macro energy curves
 
 1. Decide Level 1 hits, Level 2 clustered events, or a separately validated tensor route.
 2. Prove PFC5 callback activation with a counter/history.
-3. Export raw hits and stress-strain data without GUI-only transformations.
+3. If native PFC energies are required, enable `set energy mechanical on` before the
+   measured interval and inventory the partitions actually exposed by every active
+   contact model. Export raw hits and stress-strain data without GUI-only transformations.
 4. Cluster hits with `scripts/cluster_ae_events.py` when event catalogs are required.
 5. Compute macro input/elastic/dissipated energy with
    `scripts/ae_energy_metrics.py`.
@@ -33,6 +35,9 @@ Read [ae-contract.md](references/ae-contract.md) before choosing classifications
 
 - One bond break is a hit, not automatically one laboratory AE event.
 - Macro stress-strain energy is not direct contact-energy release.
+- PFC5 mechanical energy tracking is off by default, and the Burger model supplies no
+  own energy partition. Missing native energy cannot be reconstructed from a later
+  activation or silently replaced by the macro approximation.
 - Do not claim moment-tensor mechanisms without the tensor construction and units.
 - Keep scalar moment symbols distinct from tensor component names.
 - Classification denominator and threshold must be defined together and used consistently.

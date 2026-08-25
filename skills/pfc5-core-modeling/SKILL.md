@@ -39,7 +39,8 @@ of an existing private case to `pfc5-case-handoff`.
 5. Form contacts, then audit counts/types before changing existing contacts.
 6. Compact or equilibrate to an explicit criterion.
 7. Install final contacts transactionally: save, apply, cycle, audit, solve, save.
-8. Initialize measurements before loading.
+8. Initialize measurements before loading. If energy histories are required, enable
+   mechanical energy tracking before the measured interval.
 9. Run `scripts/audit_pfc5_case.py` and an actual PFC5 syntax probe.
 
 For an existing project, restore and audit the last claimed accepted state before a
@@ -54,7 +55,13 @@ syntax.
 
 - Do not infer PFC5 compatibility from an extension or old filename.
 - Separate future defaults from existing-contact reassignment.
+- Order non-default CMAT slots deliberately: PFC5 selects the first matching range,
+  then falls back to the default slot for that contact type.
+- Treat multiple `solve` limits as alternatives, not cumulative acceptance gates;
+  record which limit terminated the solve.
 - Do not delete all contacts as a generic model-switch recipe.
+- `cmat apply` replaces the whole selected contact model and discards its prior stored
+  state; save and audit before applying it.
 - A fixed cycle count does not prove equilibrium.
 - Source audit is static evidence only; runtime acceptance remains required.
 

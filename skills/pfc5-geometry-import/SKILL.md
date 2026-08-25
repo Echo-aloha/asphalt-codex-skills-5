@@ -20,6 +20,8 @@ boundaries originate from CAD or node/element data.
 
 1. Prefer simple native PFC5 walls for boxes, platens, cylinders and test heads.
 2. For external geometry, freeze units/axes and convert to transparent CSV/text.
+   PFC5 native `geometry import` supports its geometry format plus partial DXF and
+   text/binary STL; `wall import` can consume supported files or a geometry set.
 3. Validate duplicate IDs, missing node references, degeneracy and extents with
    `scripts/validate_geometry_csv.py`.
 4. Materialize geometry in a private case and inspect it before particle filling.
@@ -32,6 +34,9 @@ Read [geometry-contract.md](references/geometry-contract.md) for CSV schemas.
 
 - Old executables are optional external tools, never package dependencies.
 - A valid file does not prove correct scale, orientation, manifold quality or contact normals.
+- Do not use `wall import ... nothrow` as a default repair strategy: PFC5 may ignore
+  offending facets, leaving an incomplete wall. If used diagnostically, audit the
+  rejected facets and final wall closure explicitly.
 - Do not translate newer-major geometry commands into PFC5 by keyword substitution.
 - Preserve original geometry and generated intermediate files separately.
 

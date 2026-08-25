@@ -68,6 +68,10 @@ The inspected `dc.fis`:
 5. Install the actual specimen, remove unintended overlap without altering the intended
    fabric, equilibrate and save the pre-load state.
 6. Initialize independent reaction-force and head-separation/displacement histories.
+   PFC5 `wall.force.contact` is the global-coordinate sum of contact forces acting on
+   each wall; keep both heads and verify their equal/opposite balance before deriving
+   a scalar load. Set a displacement reference explicitly because `wall.disp` is an
+   accumulated wall displacement and is writable.
 7. Load at the edition-specific rate; retain enough post-peak data for the selected stop
    and flow procedure.
 8. Preserve the raw curve, apply the selected edition's origin correction, and branch
@@ -81,6 +85,9 @@ The inspected `dc.fis`:
 - Keep all case commands PFC5-pure; newer geometry/FISH syntax requires an explicit port.
 - Do not claim `dc_wfa`/`dc_wda` automatically equal final normative stability/flow;
   independently audit sign, units, sampling and correction.
+- Do not add the signed forces from two opposed heads and call the cancellation a
+  specimen load. Resolve both forces on the declared loading axis, compare magnitudes,
+  and state the scalar-load convention.
 - Treat dry stability, immersed stability and vacuum-saturation stability as distinct
   protocols. A dry DEM solve cannot be relabeled as water sensitivity.
 - Do not claim that `_dcMakeWalls` is the only required change.

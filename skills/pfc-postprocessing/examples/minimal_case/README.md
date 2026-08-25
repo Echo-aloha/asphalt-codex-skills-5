@@ -13,12 +13,16 @@ Teach the full post-processing idea without requiring PFC itself.
 - `plotdata_stress.csv`
 - `plotdata_porosity.csv`
 - `plotdata_fracture_orientations.csv`
+- `rutting_history.csv`
+- `rutting_shear_profile.csv`
 
 ## What you can learn here
 
 - how one curve file becomes one response figure
 - how scattered field data becomes contour-like maps
 - how angle lists become rose diagrams
+- how solver/equivalent time, vector reactions, face asymmetry and a signed shear-depth
+  profile remain auditable in one rutting evidence figure
 - how data contracts make the workflow portable
 
 ## Recommended commands

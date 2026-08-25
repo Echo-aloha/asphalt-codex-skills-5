@@ -25,3 +25,8 @@ For stress in MPa and dimensionless strain:
 
 Negative dissipated values are diagnostics of sign, modulus, unloading or model
 assumptions; do not silently clamp them.
+
+Native PFC5 energy and this macro integral are separate ledgers. Native mechanical
+energy tracking must be enabled before the interval of interest and only model-supported
+partitions may be reported. In particular, PFC5 Burger exposes no energy partition;
+do not label `input - elastic` as Burger dashpot energy.

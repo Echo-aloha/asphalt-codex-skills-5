@@ -15,6 +15,9 @@ Servo audit:
 - velocity is bounded;
 - reaction error and oscillation are exported;
 - callback registration is not duplicated after restore.
+- an equilibrium target and a maximum-cycle/time guard are audited separately because
+  PFC5 stops a multi-limit `solve` when any one limit is met; a guard-ended solve is
+  not accepted as equilibrated.
 
 Two-target audit:
 
