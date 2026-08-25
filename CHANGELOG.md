@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.0-preview.6 - 2026-08-26
+
 - Audit the PFC-facing skills against the official PFC 5.0 HTML help and correct CMAT
   replacement/slot order, OR-combined solve limits, `clean`, particle-generation
   overlap/porosity, clump-volume, FISH callback, wall-motion, energy-tracking and
