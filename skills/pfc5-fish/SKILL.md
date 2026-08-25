@@ -18,12 +18,15 @@ histories, traversal, IO, controllers, or stop conditions.
 ## Workflow
 
 1. Write the function contract before code: inputs, globals, return symbol, side effects.
-2. Use the PFC5 `def`/`define name ... end` family and explicit command blocks.
+2. Prefer the documented PFC5 `define name ... end` spelling and explicit command
+   blocks; accept `def` only as a verified abbreviation in retained legacy sources.
 3. Keep intentional globals few; initialize callback state before activation.
 4. Use numbered `history id` outputs and document each ID.
 5. Guard object pointers and empty collections.
-6. Activate callbacks explicitly and prove activity with a counter/history.
-7. Remove or reset callbacks across restore/restart boundaries.
+6. Use either `whilestepping` (automatic registration at `-1.0`) or an explicit
+   `set fish callback`; prove the expected call count with a counter/history.
+7. Inspect callback registrations after restore and remove/re-register only from
+   evidence; one removal clears only one duplicate registration.
 8. Run `scripts/audit_pfc5_fish.py`, then a minimal PFC5 runtime probe.
 
 Read [patterns.md](references/patterns.md) for maintained skeletons.
@@ -32,6 +35,8 @@ Read [patterns.md](references/patterns.md) for maintained skeletons.
 
 - Do not mix syntax families in one block.
 - Do not leave controller functions defined but never activated.
+- Do not explicitly register a `whilestepping` function a second time unless double
+  execution is intentional.
 - Do not put unwrapped PFC commands directly inside a FISH function.
 - Inline evaluation belongs at command level, not inside FISH expressions.
 - Static delimiter checks do not validate intrinsic names.

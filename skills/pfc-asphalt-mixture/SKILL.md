@@ -84,7 +84,7 @@ convention, constituent densities, air voids and mass-volume closure.
 | 集料-集料 | linear 或经论证的 bonded law | linear 表示无黏结摩擦；contact bond 不能标成“无黏结” |
 | 集料-等效砂浆界面 | Burger 或标定的界面模型 | 只有相应对象/分组存在时才能分配 |
 | 细料-细料/砂浆等效接触 | Burger | 需由宏观蠕变/动态响应反演 |
-| 集料-墙/压头 | linear（高摩擦） | 模拟钢模/钢压头约束 |
+| 集料-墙/压头 | 经标定的 linear 或适用界面模型 | 钢模、压头、橡胶轮及润滑条件分别标定；不预设“高摩擦” |
 
 Details and PFC command templates in `references/overview.md` and the sibling skill `pfc-burger-viscoelastic`.
 
@@ -107,6 +107,10 @@ checks and restart points remain explicit.
 - Use PFC 5.0 `cmat` semantics and reject unsupported newer-major command
   families. This package does not maintain a cross-version migration route.
 - Fix the random seed and record it — asphalt specimen generation must be reproducible.
+- Select the generator intentionally: PFC5 `ball/clump distribute` targets an
+  overlap-uncorrected porosity and can create large overlaps, while
+  `ball/clump generate` rejects overlaps but may stop at its tries limit before the
+  requested count. Neither command alone proves the achieved post-compaction voids.
 - Use the user's measured/project gradation and name the governing specification
   edition. Do not reconstruct or supply a standard gradation table when the user has not
   provided legally sourced project inputs.

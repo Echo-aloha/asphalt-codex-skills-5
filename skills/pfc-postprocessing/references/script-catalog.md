@@ -99,6 +99,20 @@ Arguments:
 - `--azim`. 3D view azimuth.
 - `--no-tiff`. Skip TIFF export.
 
+## `plot_rutting_evidence.py`
+
+Plot auditable rutting, vector-reaction, asymmetry and shear-depth evidence.
+
+Arguments:
+
+- `--history`; default `rutting_history.csv`
+- `--shear-profile`; default `rutting_shear_profile.csv`; optional file
+- `--check-only`; validate contracts without plotting dependencies or output writes
+
+The script preserves signed vertical/horizontal reactions, checks monotonic solver/
+equivalent time and pass counters, and writes a summary table. It does not compute a
+normative dynamic-stability value.
+
 ## `plot_rose.py`
 
 Plot a rose diagram from fracture or contact orientation data

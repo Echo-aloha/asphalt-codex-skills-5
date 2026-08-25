@@ -19,6 +19,31 @@ MINIMAL_FILES = {
     "plotdata_stress.csv": {"x", "y", "stress_xx", "stress_yy", "stress_xy"},
     "plotdata_porosity.csv": {"x", "y", "porosity"},
     "plotdata_fracture_orientations.csv": {"angle_deg"},
+    "rutting_history.csv": {
+        "solver_time_s",
+        "equivalent_physical_time_s",
+        "time_scale_lambda",
+        "solver_cycle",
+        "one_way_pass",
+        "round_trip",
+        "commanded_vertical_n",
+        "vertical_reaction_n",
+        "commanded_horizontal_n",
+        "horizontal_reaction_n",
+        "rut_depth_mm",
+        "forward_face_deformation_mm",
+        "reverse_face_deformation_mm",
+        "lateral_heave_mm",
+        "surrogate_route",
+    },
+    "rutting_shear_profile.csv": {
+        "sample_id",
+        "depth_mid_mm",
+        "shear_component",
+        "shear_stress_mpa",
+        "measure_radius_mm",
+        "weighting_rule",
+    },
 }
 
 
@@ -67,6 +92,14 @@ def main() -> None:
 
     validate_inputs()
     if args.check_only:
+        run(
+            str(SCRIPTS / "plot_rutting_evidence.py"),
+            "--input-dir",
+            str(EXAMPLES / "minimal_case" / "data"),
+            "--output-dir",
+            str(DEMO_OUT / "figures"),
+            "--check-only",
+        )
         print("demo inputs: ok")
         return
     require_runtime_dependencies()
@@ -84,6 +117,7 @@ def main() -> None:
     run(str(SCRIPTS / "plot_curves.py"), "--input-dir", str(minimal), "--output-dir", str(DEMO_OUT / "figures"), "--case-name", "minimal_case", "--stage", "demo")
     run(str(SCRIPTS / "plot_fields.py"), "--input-dir", str(minimal), "--output-dir", str(DEMO_OUT / "figures"), "--case-name", "minimal_case", "--stage", "demo")
     run(str(SCRIPTS / "plot_rose.py"), "--input-dir", str(minimal), "--output-dir", str(DEMO_OUT / "figures"), "--case-name", "minimal_case", "--stage", "demo")
+    run(str(SCRIPTS / "plot_rutting_evidence.py"), "--input-dir", str(minimal), "--output-dir", str(DEMO_OUT / "figures"), "--case-name", "minimal_intersection_rutting", "--stage", "demo")
 
     converted = DEMO_OUT / "converted_plugin"
     run(str(SCRIPTS / "convert_legacy_contact_export.py"), "--input-file", str(plugin / "legacy_contact_export.txt"), "--output-dir", str(converted))

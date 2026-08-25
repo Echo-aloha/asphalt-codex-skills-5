@@ -8,11 +8,12 @@ This directory is the executable core of the public `pfc-postprocessing` skill.
 2. `plot_curves.py`
 3. `plot_fields.py`
 4. `plot_rose.py`
-5. `export_animation_frames.py`
-6. `export_animation.py`
-7. `plot_porosity_3d_surface_zhongguo.py`
-8. `plot_nature_ball_displacement_vectors.py`
-9. `plot_nature_ball_velocity_vectors.py`
+5. `plot_rutting_evidence.py`
+6. `export_animation_frames.py`
+7. `export_animation.py`
+8. `plot_porosity_3d_surface_zhongguo.py`
+9. `plot_nature_ball_displacement_vectors.py`
+10. `plot_nature_ball_velocity_vectors.py`
 
 After that, read the legacy text-conversion helpers:
 
@@ -25,6 +26,8 @@ After that, read the legacy text-conversion helpers:
 - `plot_curves.py` — draws a global response curve from `stress_strain.csv`
 - `plot_fields.py` — draws displacement, velocity, stress, and porosity field figures
 - `plot_rose.py` — draws a rose diagram from fracture or contact orientation data
+- `plot_rutting_evidence.py` — checks and plots solver/equivalent time, signed vector
+  reactions, rut/heave/asymmetry and an optional tensor-defined shear-depth profile
 - `export_animation_frames.py` — normalizes frame order and filenames
 - `export_animation.py` — assembles GIF and optional MP4 outputs
 - `convert_legacy_contact_export.py` — converts old contact text exports into a public CSV

@@ -2,6 +2,6 @@
   "requires": [
     {"skill": "pfc-asphalt-mixture", "paths": ["SKILL.md", "scripts/minimal_specimen_smoke.p3dat"]},
     {"skill": "pfc-burger-viscoelastic", "paths": ["SKILL.md", "scripts/burger_contact_probe.p3dat"]},
-    {"skill": "pfc5-asphalt-workflow", "paths": ["references/standards-policy.md", "references/standards-method-map.md", "references/standards-source-ledger.json"]}
+    {"skill": "pfc5-asphalt-workflow", "paths": ["references/standards-policy.md", "references/standards-method-map.md", "references/standards-source-ledger.json", "references/intersection-rutting-research-evidence.md"]}
   ]
 }

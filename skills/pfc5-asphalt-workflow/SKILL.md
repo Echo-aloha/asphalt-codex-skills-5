@@ -37,6 +37,8 @@ Before production code, obtain or mark as unresolved:
    target air-void content;
 6. aggregate representation (balls/clumps) and minimum resolvable particle size;
 7. contact-pair hypothesis and calibrated macro targets at the test temperature/rate;
+   for an intersection case, include the vertical-horizontal load law, contact-model
+   mixture policy and any physical-to-accelerated time mapping;
 8. legal `<FISTPKG_ROOT>`, PFC runtime route and run budget;
 9. required saves, histories, raw exports, figures and acceptance tolerances.
 
@@ -143,6 +145,7 @@ they must be fitted through a model-scale response with units and geometry held 
 | compression/diametral/tension/creep | `pfc5-standard-tests`; optionally `pfc-fishtank-tests` | forming/density/performance method chain, specimen formula, sign convention and exact baseline provenance |
 | Marshall | `pfc-marshall-test` | T 0702 forming handoff, T 0709 edition, curved-head kinematics, raw/corrected curve audit |
 | wheel tracking/rutting | `pfc-rutting-test` | T 0703 or field-cut specimen handoff, T 0719 edition, count convention, load control and seven-position/equivalent rut measurement |
+| intersection braking/acceleration rutting | `pfc-rutting-test` | separate vertical/horizontal reaction targets, boundary sensitivity, shear-component/depth contract and surrogate-equivalence evidence |
 | transient load or stress wave | `pfc5-dynamics-wave` | wavelength/resolution, direction and timestep contract |
 | AE or energy interpretation | `pfc5-ae-energy` | explicit hit/event rule and declared energy convention |
 | fluid, seepage or coupled boundary | `pfc5-coupling` | exchange contract, units and independently validated solver sides |
@@ -161,6 +164,8 @@ Required checks:
 - seed, resolution, timestep/damping and boundary sensitivity;
 - mass/volume/air-void closure;
 - reaction force versus prescribed load and duplicate displacement measurement;
+- for accelerated or coupled rutting, unaccelerated pilot comparison, contact-model
+  population audit, vector-reaction error, displacement asymmetry and shear-depth profile;
 - curve shape, scalar targets and failure/rutting pattern against experiments;
 - rerun instructions and explicit list of unpassed runtime gates.
 
@@ -207,6 +212,9 @@ Deliver:
 - `references/standards-method-map.md` — roles and method-chain routing for the reviewed asphalt, aggregate, design, field, maintenance and acceptance standards.
 - `references/standards-source-ledger.json` — source identity, digest, review scope and claim records; no standards text.
 - `references/runtime-verification-manifest.json` — hash-bound record of the four PFC5 runtime probes and the retained evidence level.
+- `references/intersection-rutting-research-evidence.md` — external-paper evidence,
+  transferable modeling ideas and explicit non-default boundaries for mixed contacts,
+  time compression and vertical-horizontal rutting.
 - `scripts/check_fistpkg.py` — backward-compatible entry point for the checker owned by `pfc-fishtank-tests`.
 - `scripts/check_runtime_manifest.py` — verifies that recorded runtime evidence still matches the current probe sources.
 - `templates/pfc5-asphalt-intake.yaml` — case intake and provenance template.

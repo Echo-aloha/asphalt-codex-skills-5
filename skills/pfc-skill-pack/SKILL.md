@@ -35,13 +35,15 @@ Use this skill when maintaining, auditing, packaging, or releasing this reposito
 
 1. Classify the change as governance, PFC source, Python tooling, example data, or external dependency contract.
 2. Reject out-of-scope version content before detailed review.
-3. Keep `SKILL.md` concise and move detailed reusable material to `references/` or `scripts/`.
-4. Update `dependencies.json` for every cross-skill asset.
-5. Run the validator, Python tests, AST compilation checks, and relevant demo/smoke tests.
-6. Confirm every slug in `references/pfc5-skill-set.json` exists and every migrated
+3. When a licensed PFC5 help tree is available, bind command claims to relative page
+   locators using `references/pfc5-help-audit.md`; do not copy or commit the help tree.
+4. Keep `SKILL.md` concise and move detailed reusable material to `references/` or `scripts/`.
+5. Update `dependencies.json` for every cross-skill asset.
+6. Run the validator, Python tests, AST compilation checks, and relevant demo/smoke tests.
+7. Confirm every slug in `references/pfc5-skill-set.json` exists and every migrated
    capability is accounted for in `references/migration-coverage.md`.
-7. Regenerate `references/skill-index.md` and review the final diff.
-8. Record any unpassed PFC runtime gate explicitly.
+8. Regenerate `references/skill-index.md` and review the final diff.
+9. Record any unpassed PFC runtime gate explicitly.
 
 ## Release Gates
 
@@ -63,6 +65,7 @@ Return the retained skill list, removed/out-of-scope assets, validator/test resu
 ## Local Contents
 
 - `references/asset-inventory.md` — PFC5 packaging classes and inclusion rules.
+- `references/pfc5-help-audit.md` — relative official-help locators and corrected command semantics; the commercial help stays external.
 - `references/migration-coverage.md` — retained, rewritten and deliberately excluded capabilities.
 - `references/pfc5-skill-set.json` — portable copy of the required package skill set; release validation keeps it identical to the repository manifest.
 - `templates/case-intake.md` — repository change intake.
